@@ -1,0 +1,34 @@
+import React from 'react'
+import { Paper, Box, Toolbar, IconButton, Typography } from '@mui/material'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Link } from 'react-router-dom';
+import VehicleFormComponent from '../../components/vehicleFormComponent'
+
+const CreateVehicleScreen = () => {
+
+  return (
+    <Paper>
+      <Box sx={{ flexGrow: 1 }}>
+        <Toolbar>
+          <IconButton
+            size="small"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            component={Link}
+            to="/vehicles/manage"
+          >
+            <ArrowBackIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Add Vehicle
+          </Typography>
+        </Toolbar>
+      </Box>
+      <VehicleFormComponent />
+    </Paper>
+  )
+}
+
+export default CreateVehicleScreen

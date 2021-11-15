@@ -1,10 +1,23 @@
-import { useState } from 'react'
+import React from 'react'
+import HeaderComponent from './components/headerComponent'
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
+import { Container } from '@mui/material';
+import Routes from './routes';
+import Providers from './Providers';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <h1>In progress</h1>
+    <Providers >
+      <Router>
+        <HeaderComponent />
+        <Container>
+          <Routes />
+        </Container>
+      </Router>
+    </Providers>
   )
 }
 
